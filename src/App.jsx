@@ -31,7 +31,7 @@ function App() {
       return (
         <div>
         <p>Witaj, {users[0].username}</p>
-        <button onClick={logout}></button>
+        <button onClick={logout}>Wyloguj</button>
         </div>
       );
   }
