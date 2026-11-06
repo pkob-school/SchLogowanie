@@ -7,7 +7,7 @@ import './App.css'
 
 function App() {
   // Normalnie powinien być hash ale nwm jak to zrobić w JS
-  const users = [
+  let users = [
     {"username": "admin", "password": "root"}
   ];
   // session - "id": 0, "assoc_user_id": 0
@@ -23,20 +23,19 @@ function App() {
       append_session({"id": Math.random(), "associated_user_id": 0});
     }
   }, [logged_in]);
-  const [count, setCount] = useState(0)
 
+  if (logged_in) {
+      return (
+        <p>Witaj, {users[0].username}</p>
+      );
+  }
+  else {
   return (
     <>
-    {logged_in ? 
-      (
-      <p>Witaj, {users[0].username}</p>
-      )
-    : (
-        <Form userArr={users}/>
-      )}
-      
+      <Form userArr={users}/> 
     </>
-  )
+  );
+  }
 }
 
 export default App
