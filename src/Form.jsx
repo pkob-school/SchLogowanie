@@ -10,7 +10,7 @@ function Form({sessionArr, userArr}) {
         }
     }
     function register(ev) {
-
+        
     }
     return (<form>
         <h2>Zaloguj się</h2>

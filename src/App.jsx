@@ -24,15 +24,21 @@ function App() {
     }
   }, [logged_in]);
 
+  function logout() {
+    localStorage.removeItem("logged_in"); logged_in = false; location.reload();
+  }
   if (logged_in === true) {
       return (
+        <div>
         <p>Witaj, {users[0].username}</p>
+        <button onClick={logout}></button>
+        </div>
       );
   }
   else {
   return (
     <>
-      <Form userArr={users}/> 
+      <Form userArr={users} sessionArr={sessions}/> 
     </>
   );
   }
