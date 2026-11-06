@@ -19,12 +19,12 @@ function App() {
   let [logged_in, setLoggedIn] = useState(false);
   useEffect(() => {
     if (localStorage.getItem("logged_in") !== null) {
-      logged_in = true;
+      setLoggedIn(true);
       append_session({"id": Math.random(), "associated_user_id": 0});
     }
   }, [logged_in]);
 
-  if (logged_in) {
+  if (logged_in === true) {
       return (
         <p>Witaj, {users[0].username}</p>
       );
