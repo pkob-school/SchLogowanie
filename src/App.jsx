@@ -32,7 +32,7 @@ function App() {
       <p>Witaj, {users[0].username}</p>
       )
     : (
-        <Form/>
+        <Form userArr={users}/>
       )}
       
     </>
